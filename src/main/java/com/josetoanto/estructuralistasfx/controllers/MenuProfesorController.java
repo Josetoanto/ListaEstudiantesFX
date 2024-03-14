@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -94,18 +95,26 @@ public class MenuProfesorController {
 
     @FXML
     void onMostrarAlumnosClick(MouseEvent event) {
-        try {
-            Stage stage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mostrarAlumnos.fxml"));
-            Pane root = fxmlLoader.load();
-            Scene scene = new Scene(root);
-            stage.setTitle("Mostrar Alumnos");
-            stage.setScene(scene);
-            stage.show();
-            MostrarAlumnosController mostrarAlumnosController = fxmlLoader.getController();
-            mostrarAlumnosController.setListaAsistencia(listaAsistencia);
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (listaAsistencia.getListaEstudiantes().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Lista vacia");
+            alert.showAndWait();
+        } else {
+            try {
+                Stage stage = new Stage();
+                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mostrarAlumnos.fxml"));
+                Pane root = fxmlLoader.load();
+                Scene scene = new Scene(root);
+                stage.setTitle("Mostrar Alumnos");
+                stage.setScene(scene);
+                stage.show();
+                MostrarAlumnosController mostrarAlumnosController = fxmlLoader.getController();
+                mostrarAlumnosController.setListaAsistencia(listaAsistencia);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     @FXML

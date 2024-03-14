@@ -25,6 +25,8 @@ public class EliminarAlumnoController {
     private TextArea txt_MostrarEstudiante;
     private ListaAsistencia listaAsistencia;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
+    private String matricula;
+
 
     @FXML
     void onEliminarClick(MouseEvent event) {
@@ -36,10 +38,14 @@ public class EliminarAlumnoController {
                     if (listaAsistencia.getListaEstudiantes().remove(clonListaEstudiantes.get(matriculaEliminar)))
                         lbl_Advertencia.setText("Estudiante borrado con exito");
                 } else {
-                    lbl_Advertencia.setText("Estudiante no encontrado");
+                    Node source = (Node) event.getSource();
+                    Stage stage = (Stage) source.getScene().getWindow();
+                    stage.close();
                 }
             } else {
-                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
             }
         } else {
             lbl_Advertencia.setText("Lista de estudiantes vacia");
@@ -56,6 +62,18 @@ public class EliminarAlumnoController {
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
         txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+        matricula = txt_MatriculaEliminar.getText();
+        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+            if (matricula.length() == 6) {
+                if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
+                    lbl_Advertencia.setText("Estudiante no encontrado");
+                }
+            } else {
+                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+            }
+        } else {
+            lbl_Advertencia.setText("No hay estudiantes en la lista");
+        }
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

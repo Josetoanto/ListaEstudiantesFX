@@ -29,19 +29,14 @@ public class BuscarAlumnoController {
 
     @FXML
     void onSalirClick(MouseEvent event) {
-<<<<<<< HEAD
-        
-
-=======
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
->>>>>>> logicaAcabada
     }
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
-        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar).imprimirDatos());
+        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

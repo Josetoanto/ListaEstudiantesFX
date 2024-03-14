@@ -17,10 +17,6 @@ public class MostrarAlumnosController {
 
     private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
 
-    public void initialize(){
-        listaAlumnos.getItems().addAll(listaEstudiantes.toString());
-    }
-
     @FXML
     void onSalirClick(MouseEvent event) {
         Node source = (Node) event.getSource();
@@ -30,5 +26,6 @@ public class MostrarAlumnosController {
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {
         this.listaAlumnos = listaAlumnos;
+        listaAlumnos.getItems().addAll(listaEstudiantes.toString());
     }
 }

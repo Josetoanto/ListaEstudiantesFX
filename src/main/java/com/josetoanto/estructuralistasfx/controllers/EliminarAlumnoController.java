@@ -55,7 +55,7 @@ public class EliminarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
-        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar).imprimirDatos());
+        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

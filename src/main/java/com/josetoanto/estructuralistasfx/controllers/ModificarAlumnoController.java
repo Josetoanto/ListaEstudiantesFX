@@ -44,14 +44,14 @@ public class ModificarAlumnoController {
                     clonListaEstudiantes.put(iterador.getMatricula(), iterador);
                 }
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
-                    clonListaEstudiantes.get(txt_MatriculaModificar).inicializarMaterias();
-                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
+                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
+                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
                     System.out.println("Agrege la calificacion de POO");
-                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
+                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
                     System.out.println("Agrege la calificacion de Estructura de datos");
-                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
+                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
                     System.out.println("Agrege la calificacion de Cálculo diferencial");
-                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
+                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
                 } else {
                     lbl_Advertencia.setText("Estudiante no encontrado");
                 }

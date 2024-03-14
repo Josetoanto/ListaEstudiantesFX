@@ -22,6 +22,7 @@ public class BuscarAlumnoController {
 
     @FXML
     void onSalirClick(MouseEvent event) {
+        
 
     }
 

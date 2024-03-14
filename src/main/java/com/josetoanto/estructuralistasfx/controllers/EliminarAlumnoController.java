@@ -60,20 +60,8 @@ public class EliminarAlumnoController {
     }
 
     @FXML
-    void txta_BuscadorAlumnos(KeyEvent event) {
+    void txta_BuscadorAlumnos(KeyEvent event){
         txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
-        matricula = txt_MatriculaEliminar.getText();
-        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
-            if (matricula.length() == 6) {
-                if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
-                    lbl_Advertencia.setText("Estudiante no encontrado");
-                }
-            } else {
-                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
-            }
-        } else {
-            lbl_Advertencia.setText("No hay estudiantes en la lista");
-        }
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

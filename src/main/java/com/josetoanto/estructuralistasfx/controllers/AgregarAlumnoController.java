@@ -1,9 +1,13 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.models.Estudiante;
+<<<<<<< HEAD
 
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 
+=======
+import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+>>>>>>> logicaAcabada
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Alert;

@@ -4,6 +4,7 @@ import com.josetoanto.estructuralistasfx.Main;
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -95,7 +96,7 @@ public class MenuProfesorController {
     void onMostrarAlumnosClick(MouseEvent event) {
         try {
             Stage stage = new Stage();
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("modificarAlumno.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("mostrarAlumnos.fxml"));
             Pane root = fxmlLoader.load();
             Scene scene = new Scene(root);
             stage.setTitle("Mostrar Alumnos");
@@ -109,7 +110,9 @@ public class MenuProfesorController {
     }
     @FXML
     void onSalirClick(MouseEvent event) {
-        System.exit(1);
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
 }

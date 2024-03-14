@@ -1,6 +1,7 @@
 package com.josetoanto.estructuralistasfx.models;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Random;
 
 public class Estudiante {
@@ -63,5 +64,18 @@ public class Estudiante {
         imprimir += "Nombre completo: " + name + " " + lastname + "\n";
         imprimir += "Promedio general: " + calcularPromedio();
         return imprimir;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Estudiante)) return false;
+        Estudiante that = (Estudiante) o;
+        return Objects.equals(matricula, that.matricula);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matricula);
     }
 }

@@ -47,6 +47,8 @@ public class IniciarSesionController {
                 stage.setTitle("Bienvenido");
                 stage.setScene(scene);
                 stage.show();
+                MenuProfesorController menuProfesorController = fxmlLoader.getController();
+                menuProfesorController.setListaAsistencia(listaAsistencia);
             } catch (IOException e) {
                 e.printStackTrace();
             }

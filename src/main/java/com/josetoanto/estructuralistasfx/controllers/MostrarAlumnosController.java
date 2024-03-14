@@ -24,4 +24,7 @@ public class MostrarAlumnosController {
 
     }
 
+    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
+        this.listaAlumnos = listaAlumnos;
+    }
 }

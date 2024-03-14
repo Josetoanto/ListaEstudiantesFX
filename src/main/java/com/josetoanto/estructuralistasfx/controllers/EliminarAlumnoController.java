@@ -1,5 +1,6 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
+import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -17,6 +18,7 @@ public class EliminarAlumnoController {
 
     @FXML
     private TextArea txt_MostrarEstudiante;
+    private ListaAsistencia listaAsistencia;
 
     @FXML
     void onEliminarClick(MouseEvent event) {
@@ -33,4 +35,7 @@ public class EliminarAlumnoController {
 
     }
 
+    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
+        this.listaAsistencia = listaAsistencia;
+    }
 }

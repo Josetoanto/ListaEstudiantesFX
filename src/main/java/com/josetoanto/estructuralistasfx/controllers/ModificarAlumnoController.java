@@ -1,12 +1,17 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
+import com.josetoanto.estructuralistasfx.models.Estudiante;
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.util.HashMap;
 
 public class ModificarAlumnoController {
 
@@ -28,20 +33,45 @@ public class ModificarAlumnoController {
     @FXML
     private TextField txt_MatriculaModificar;
     private ListaAsistencia listaAsistencia;
+    private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
+
 
     @FXML
     void onModificarClick(ActionEvent event) {
-
+        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+            if (txt_MatriculaModificar.getText().length() == 6) {
+                for (Estudiante iterador : listaAsistencia.getListaEstudiantes()) {
+                    clonListaEstudiantes.put(iterador.getMatricula(), iterador);
+                }
+                if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
+                    clonListaEstudiantes.get(txt_MatriculaModificar).inicializarMaterias();
+                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
+                    System.out.println("Agrege la calificacion de POO");
+                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
+                    System.out.println("Agrege la calificacion de Estructura de datos");
+                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
+                    System.out.println("Agrege la calificacion de Cálculo diferencial");
+                    clonListaEstudiantes.get(txt_MatriculaModificar).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
+                } else {
+                    lbl_Advertencia.setText("Estudiante no encontrado");
+                }
+            } else {
+                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+            }
+        } else {
+            lbl_Advertencia.setText("No hay estudiantes en la lista");
+        }
     }
 
     @FXML
     void onSalirClick(MouseEvent event) {
-
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
-
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

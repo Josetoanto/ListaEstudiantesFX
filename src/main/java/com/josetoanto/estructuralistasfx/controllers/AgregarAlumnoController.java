@@ -1,10 +1,7 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
-<<<<<<< HEAD
 import com.josetoanto.estructuralistasfx.models.Estudiante;
-=======
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
->>>>>>> menuProfesorLogica
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;

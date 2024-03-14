@@ -40,8 +40,7 @@ public class AgregarAlumnoController {
                 alertaAgregadoCorrectamente(matricula);
 
             }
-
-            if (listaAsistencia.getListaEstudiantes().contains(estudiante)){
+            else if (listaAsistencia.getListaEstudiantes().contains(estudiante)){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);

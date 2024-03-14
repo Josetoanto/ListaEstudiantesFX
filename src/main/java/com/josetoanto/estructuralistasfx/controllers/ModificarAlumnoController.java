@@ -40,10 +40,15 @@ public class ModificarAlumnoController {
 
     @FXML
     void onModificarClick(ActionEvent event) {
+        boolean noRango=false;
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
             if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
+                    if (Integer.parseInt(txt_CalCal.getText()) >= 10 && Integer.parseInt(txt_CalCal.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalED.getText()) >= 10 && Integer.parseInt(txt_CalED.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalIngles.getText()) >= 10 && Integer.parseInt(txt_CalIngles.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalPOO.getText()) >= 10 && Integer.parseInt(txt_CalPOO.getText()) <= 100) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
                     System.out.println("Agrege la calificacion de POO");
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
@@ -52,6 +57,9 @@ public class ModificarAlumnoController {
                     System.out.println("Agrege la calificacion de Cálculo diferencial");
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
                     lbl_Advertencia.setText("Estudiante modificado");
+                    }else {
+                        lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
+                    }
                 } else {
                     Node source = (Node) event.getSource();
                     Stage stage = (Stage) source.getScene().getWindow();

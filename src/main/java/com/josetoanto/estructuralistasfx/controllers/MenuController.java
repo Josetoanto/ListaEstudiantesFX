@@ -1,6 +1,7 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.Main;
+import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,7 +14,10 @@ import java.util.ArrayList;
 
 public class MenuController {
 
-
+    private ListaAsistencia listaAsistencia= new ListaAsistencia();
+    void setListaAsistencia(ListaAsistencia listaAsistencia){
+        this.listaAsistencia=listaAsistencia;
+    }
 
     @FXML
     void onAgregarUsuarioClick(MouseEvent event) {
@@ -25,6 +29,8 @@ public class MenuController {
             stage.setTitle("agregando usuario");
             stage.setScene(scene);
             stage.show();
+            AgregarSesionController agregarSesionController = fxmlLoader.getController();
+            agregarSesionController.setListaAsistencia(listaAsistencia);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,6 +46,8 @@ public class MenuController {
             stage.setTitle("Iniciando Sesion");
             stage.setScene(scene);
             stage.show();
+            IniciarSesionController iniciarSesionController = fxmlLoader.getController();
+            iniciarSesionController.setListaAsistencia(listaAsistencia);
         } catch (IOException e) {
             e.printStackTrace();
         }

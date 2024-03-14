@@ -3,21 +3,28 @@ package com.josetoanto.estructuralistasfx.controllers;
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
 public class AgregarSesionController {
-    private ListaAsistencia listaAsistencia= new ListaAsistencia();;
+    private ListaAsistencia listaAsistencia;
 
     @FXML
     private TextField contraseñaSesion;
 
     @FXML
     private TextField nombreSesion;
+
+    void setListaAsistencia(ListaAsistencia listaAsistencia){
+        this.listaAsistencia=listaAsistencia;
+    }
+
 
     @FXML
     void onAgregarClick(MouseEvent event) {
@@ -45,6 +52,10 @@ public class AgregarSesionController {
                     alert1.setContentText("Usuario agregado correctamente");
                     alert1.showAndWait();
                     System.out.println("Usuario agregado correctamente");
+                    setListaAsistencia(listaAsistencia);
+                    Node source = (Node) event.getSource();
+                    Stage stage = (Stage) source.getScene().getWindow();
+                    stage.close();
 
                 } else if (response == buttonTypeNo) {
                     Alert alert1 = new Alert(Alert.AlertType.INFORMATION);

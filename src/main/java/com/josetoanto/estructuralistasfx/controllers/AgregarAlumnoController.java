@@ -1,5 +1,6 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
+import com.josetoanto.estructuralistasfx.models.Estudiante;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -17,7 +18,6 @@ public class AgregarAlumnoController {
 
     @FXML
     void onAgregarClick(MouseEvent event) {
-
     }
 
 }

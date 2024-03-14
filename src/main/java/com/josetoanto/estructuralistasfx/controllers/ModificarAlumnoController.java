@@ -35,14 +35,13 @@ public class ModificarAlumnoController {
     private ListaAsistencia listaAsistencia;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
 
+    private String matricula;
+
 
     @FXML
     void onModificarClick(ActionEvent event) {
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
-            if (txt_MatriculaModificar.getText().length() == 6) {
-                for (Estudiante iterador : listaAsistencia.getListaEstudiantes()) {
-                    clonListaEstudiantes.put(iterador.getMatricula(), iterador);
-                }
+            if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
@@ -54,10 +53,14 @@ public class ModificarAlumnoController {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
                     lbl_Advertencia.setText("Estudiante modificado");
                 } else {
-                    lbl_Advertencia.setText("Estudiante no encontrado");
+                    Node source = (Node) event.getSource();
+                    Stage stage = (Stage) source.getScene().getWindow();
+                    stage.close();
                 }
             } else {
-                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
             }
         } else {
             lbl_Advertencia.setText("No hay estudiantes en la lista");
@@ -73,9 +76,24 @@ public class ModificarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
+       matricula = txt_MatriculaModificar.getText();
+        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+            if (matricula.length() == 6) {
+                if (clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null) {
+                    lbl_Advertencia.setText("Estudiante no encontrado");
+                }
+            } else {
+                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+                }
+        } else {
+            lbl_Advertencia.setText("No hay estudiantes en la lista");
+        }
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {
         this.listaAsistencia = listaAsistencia;
+        for (Estudiante iterador : listaAsistencia.getListaEstudiantes()) {
+            clonListaEstudiantes.put(iterador.getMatricula(), iterador);
+        }
     }
 }

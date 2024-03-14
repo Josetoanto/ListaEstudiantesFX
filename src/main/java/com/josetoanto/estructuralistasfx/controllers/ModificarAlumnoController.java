@@ -1,5 +1,6 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
+import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -26,6 +27,7 @@ public class ModificarAlumnoController {
 
     @FXML
     private TextField txt_MatriculaModificar;
+    private ListaAsistencia listaAsistencia;
 
     @FXML
     void onModificarClick(ActionEvent event) {
@@ -42,4 +44,7 @@ public class ModificarAlumnoController {
 
     }
 
+    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
+        this.listaAsistencia = listaAsistencia;
+    }
 }

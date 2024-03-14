@@ -52,6 +52,7 @@ public class ModificarAlumnoController {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
                     System.out.println("Agrege la calificacion de Cálculo diferencial");
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
+                    lbl_Advertencia.setText("Estudiante modificado");
                 } else {
                     lbl_Advertencia.setText("Estudiante no encontrado");
                 }

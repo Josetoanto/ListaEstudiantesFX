@@ -25,7 +25,9 @@ public class MostrarAlumnosController {
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaAlumnos = listaAlumnos;
-        listaAlumnos.getItems().addAll(listaEstudiantes.toString());
+        this.listaEstudiantes = listaAsistencia.getListaEstudiantes();
+        for (Estudiante estudiante: listaEstudiantes){
+            listaAlumnos.getItems().add(estudiante.imprimirDatos());
+        }
     }
 }

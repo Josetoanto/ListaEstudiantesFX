@@ -13,11 +13,11 @@
             <Font size="21.0" />
          </font>
       </Label>
-      <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onAgregarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Agregar alumnos a la lista" />
-      <Button layoutX="90.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#onBuscarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Buscar alumno en la lista" />
-      <Button layoutX="90.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onEliminarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Eliminar alumnos de la lista" />
-      <Button layoutX="90.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#onModificarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Modificar calificacion" />
-      <Button layoutX="90.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#onMostrarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Mostrar alumnos de la lista" />
+      <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onAgregarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white; -fx-border-radius: 2;" text="Agregar alumnos a la lista" />
+      <Button layoutX="90.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#onBuscarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white; -fx-border-radius: 2;" text="Buscar alumno en la lista" />
+      <Button layoutX="90.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onEliminarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white; -fx-border-radius: 2;" text="Eliminar alumnos de la lista" />
+      <Button layoutX="90.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#onModificarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white; -fx-border-radius: 2;" text="Modificar calificacion" />
+      <Button layoutX="90.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#onMostrarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white; -fx-border-radius: 2;" text="Mostrar alumnos de la lista" />
       <Button layoutX="373.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" style="-fx-background-color: white; -fx-border-color: gray;" text="Salir" />
       <BorderPane prefHeight="62.0" prefWidth="434.0" style="-fx-border-color: gray;" />
    </children>

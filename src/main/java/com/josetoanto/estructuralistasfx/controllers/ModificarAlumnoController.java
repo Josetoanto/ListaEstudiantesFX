@@ -91,10 +91,10 @@ public class ModificarAlumnoController {
                     lbl_Advertencia.setText("Estudiante no encontrado");
                 }
             } else {
-                lbl_Advertencia.setText("La matricula debe llevar 6 caracteres");
+                lbl_Advertencia.setText("6 caracteres minimo");
                 }
         } else {
-            lbl_Advertencia.setText("No hay estudiantes en la lista");
+            lbl_Advertencia.setText("No hay estudiantes");
         }
     }
 

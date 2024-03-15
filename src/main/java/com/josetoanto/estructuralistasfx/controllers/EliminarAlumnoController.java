@@ -25,18 +25,21 @@ public class EliminarAlumnoController {
     private TextArea txt_MostrarEstudiante;
     private ListaAsistencia listaAsistencia;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
-    private String matricula;
+    private String matriculaEliminar;
 
 
     @FXML
     void onEliminarClick(MouseEvent event) {
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
             System.out.println("Ingrese matricula de alumno a eliminar");
-            String matriculaEliminar = txt_MatriculaEliminar.getText();
+            matriculaEliminar = txt_MatriculaEliminar.getText();
             if (matriculaEliminar.length() == 6) {
+                System.out.println("tiene 6 digitos");
                 if (!(clonListaEstudiantes.get(matriculaEliminar) == null)){
+                    System.out.println("no es null");
                     if (listaAsistencia.getListaEstudiantes().remove(clonListaEstudiantes.get(matriculaEliminar)))
                         lbl_Advertencia.setText("Estudiante borrado con exito");
+                    System.out.println("borrado con exito");
                 } else {
                     Node source = (Node) event.getSource();
                     Stage stage = (Stage) source.getScene().getWindow();
@@ -61,7 +64,20 @@ public class EliminarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event){
-        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+        matriculaEliminar = txt_MatriculaEliminar.getText();
+        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+            if (matriculaEliminar.length() == 6) {
+                if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
+                    lbl_Advertencia.setText("Estudiante no encontrado");
+                } else {
+                    txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+                }
+            } else {
+                lbl_Advertencia.setText("6 caracteres minimo");
+            }
+        } else {
+            lbl_Advertencia.setText("No hay estudiantes");
+        }
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

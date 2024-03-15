@@ -36,7 +36,20 @@ public class BuscarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
-        txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+        String matriculaEliminar = txt_MatriculaEliminar.getText();
+        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+            if (matriculaEliminar.length() == 6) {
+                if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
+                    lbl_Advertencia.setText("Estudiante no encontrado");
+                } else {
+                    txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+                }
+            } else {
+                lbl_Advertencia.setText("6 caracteres minimo");
+            }
+        } else {
+            lbl_Advertencia.setText("No hay estudiantes");
+        }
     }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {

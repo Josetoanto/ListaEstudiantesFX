@@ -15,7 +15,7 @@
       </Label>
       <TextField fx:id="txt_MatriculaModificar" layoutX="168.0" layoutY="98.0" onKeyReleased="#txta_BuscadorAlumnos" />
       <Label layoutX="32.0" layoutY="102.0" text="Matricula del estudiante:" />
-      <Label fx:id="lbl_Advertencia" layoutX="35.0" layoutY="124.0" prefHeight="26.0" prefWidth="284.0" />
+      <Label fx:id="lbl_Advertencia" layoutX="168.0" layoutY="124.0" prefHeight="26.0" prefWidth="150.0" />
       <Button layoutX="271.0" layoutY="360.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" text="Salir" />
       <Button layoutX="129.0" layoutY="334.0" mnemonicParsing="false" onAction="#onModificarClick" text="Modificar" />
       <Label layoutX="32.0" layoutY="159.0" text="Agrege calificacion de Ingles" />

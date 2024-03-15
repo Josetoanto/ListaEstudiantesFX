@@ -26,7 +26,7 @@ public class MenuController {
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("AgregarSesion.fxml"));
             Pane root = fxmlLoader.load();
             Scene scene = new Scene(root);
-            stage.setTitle("agregando usuario");
+            stage.setTitle("Agregando usuario");
             stage.setScene(scene);
             stage.show();
             AgregarSesionController agregarSesionController = fxmlLoader.getController();

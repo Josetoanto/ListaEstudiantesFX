@@ -38,13 +38,15 @@ public class AgregarAlumnoController {
                 estudiante=new Estudiante(Integer.parseInt(txt_fechaIngreso.getText()),matricula,txt_name.getText(),txt_lastName.getText(),estudiante.getMaterias());
                 listaAsistencia.addEstudiante(estudiante);
                 alertaAgregadoCorrectamente(matricula);
-
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
             }
             else if (listaAsistencia.getListaEstudiantes().contains(estudiante)){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("matricula ya existe, por lo tanto no se agregara el alumno.");
+                alert.setContentText("Matricula ya existe, por lo tanto no se agregara el alumno.");
                 alert.showAndWait();
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
@@ -54,7 +56,7 @@ public class AgregarAlumnoController {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("matricula no tiene 6 digitos");
+                alert.setContentText("Matricula no tiene 6 digitos");
                 alert.showAndWait();
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
@@ -68,9 +70,9 @@ public class AgregarAlumnoController {
 
     public void alertaAgregadoCorrectamente(String matricula){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("agregado Exitosamente");
+        alert.setTitle("Agregado Exitosamente");
         alert.setHeaderText(null);
-        alert.setContentText("se agrego correctamente el alumno\n su matricula es: "+ matricula);
+        alert.setContentText("Se agrego correctamente el alumno\n su matricula es: "+ matricula);
         alert.showAndWait();
         setListaAsistencia(listaAsistencia);
     }

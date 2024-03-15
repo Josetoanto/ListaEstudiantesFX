@@ -35,7 +35,7 @@ public class AgregarSesionController {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Confirmación");
-            alert.setHeaderText("¿esta seguro que sus datos son correctos?\n"
+            alert.setHeaderText("Esta seguro que sus datos son correctos?\n"
                     + nombreSesion.getText() + " " + contraseñaSesion.getText());
 
             ButtonType buttonTypeSi = new ButtonType("Sí");
@@ -59,7 +59,7 @@ public class AgregarSesionController {
 
                 } else if (response == buttonTypeNo) {
                     Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-                    alert1.setTitle("Éxito");
+                    alert1.setTitle("Cancelado");
                     alert1.setHeaderText(null);
                     alert1.setContentText("Usuario no se creó");
                     alert1.showAndWait();
@@ -69,11 +69,11 @@ public class AgregarSesionController {
         }
             else {
             Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
-            alert1.setTitle("Éxito");
+            alert1.setTitle("Cancelado");
             alert1.setHeaderText(null);
-            alert1.setContentText("contraseña no cumple con los criterios");
+            alert1.setContentText("Contraseña no cumple con los criterios");
             alert1.showAndWait();
-            System.out.println("contraseña no cumple con los criterios");
+            System.out.println("Contraseña no cumple con los criterios");
             }
     }
     @FXML

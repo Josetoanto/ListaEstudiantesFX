@@ -9,21 +9,23 @@
 
 <AnchorPane prefHeight="283.0" prefWidth="468.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josetoanto.estructuralistasfx.controllers.AgregarSesionController">
    <children>
-      <TextField fx:id="nombreSesion" layoutX="143.0" layoutY="87.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: GRAY;" />
-      <TextField fx:id="contraseñaSesion" layoutX="143.0" layoutY="139.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: GRAY;" />
-      <Label layoutX="68.0" layoutY="87.0" text="Nombre">
+      <TextField fx:id="nombreSesion" layoutX="143.0" layoutY="101.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: #afbdd4;" />
+      <TextField fx:id="contraseñaSesion" layoutX="143.0" layoutY="153.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: #afbdd4;" />
+      <Label layoutX="68.0" layoutY="101.0" text="Nombre" textFill="#0e0a99">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="48.0" layoutY="139.0" text="Contraseña">
+      <Label layoutX="48.0" layoutY="153.0" text="Contraseña" textFill="#0e0a99">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Button layoutX="208.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onAgregarClick" style="-fx-background-color: #FFFFFF; -fx-border-color: GRAY; -fx-border-radius: 24;" text="Agregar" />
-      <Label layoutX="147.0" layoutY="26.0" text="Agregar sesion nueva">
+      <Button layoutX="163.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#onAgregarClick" style="-fx-background-color: #6d84b4; -fx-border-radius: 24;" text="Agregar" />
+      <Label layoutX="143.0" layoutY="51.0" text="Agregar sesion nueva" textFill="#0e0a99">
          <font>
             <Font size="22.0" />
          </font></Label>
-      <BorderPane layoutY="262.0" prefHeight="26.0" prefWidth="480.0" style="-fx-background-color: black;" />
+      <BorderPane layoutY="262.0" prefHeight="26.0" prefWidth="480.0" style="-fx-background-color: #3b5998;" />
+      <BorderPane layoutY="-5.0" prefHeight="32.0" prefWidth="480.0" style="-fx-background-color: #3b5998;" />
+      <Button layoutX="248.0" layoutY="214.0" mnemonicParsing="false" onMouseClicked="#onCancelarClick" style="-fx-background-color: #6d84b4; -fx-border-radius: 24;" text="Cancelar" />
    </children>
 </AnchorPane>

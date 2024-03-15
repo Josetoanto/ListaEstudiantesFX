@@ -76,4 +76,10 @@ public class AgregarSesionController {
             System.out.println("contraseña no cumple con los criterios");
             }
     }
+    @FXML
+    void onCancelarClick(MouseEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }

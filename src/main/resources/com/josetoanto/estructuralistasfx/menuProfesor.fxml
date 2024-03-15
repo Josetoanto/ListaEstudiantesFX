@@ -3,20 +3,22 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="txt_Bienvenido" prefHeight="400.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josetoanto.estructuralistasfx.controllers.MenuProfesorController">
+<AnchorPane fx:id="txt_Bienvenido" prefHeight="388.0" prefWidth="396.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josetoanto.estructuralistasfx.controllers.MenuProfesorController">
    <children>
-      <Label layoutX="20.0" layoutY="23.0" prefHeight="40.0" prefWidth="450.0" text="Bienvenido ">
+      <Label fx:id="txt_bienvenida" layoutX="20.0" layoutY="23.0" prefHeight="40.0" prefWidth="414.0" style="-fx-font: 5;" text="Bienvenido ">
          <font>
-            <Font size="27.0" />
+            <Font size="21.0" />
          </font>
       </Label>
-      <Button layoutX="108.0" layoutY="89.0" mnemonicParsing="false" onMouseClicked="#onAgregarAlumnosClick" prefHeight="26.0" prefWidth="254.0" text="Agregar alumnos a la lista" />
-      <Button layoutX="108.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#onBuscarAlumnosClick" prefHeight="26.0" prefWidth="254.0" text="Buscar alumno en la lista" />
-      <Button layoutX="108.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#onEliminarAlumnosClick" prefHeight="26.0" prefWidth="254.0" text="Eliminar alumnos de la lista" />
-      <Button layoutX="108.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#onModificarAlumnosClick" prefHeight="26.0" prefWidth="254.0" text="Modificar calificacion" />
-      <Button layoutX="108.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#onMostrarAlumnosClick" prefHeight="26.0" prefWidth="254.0" text="Mostrar alumnos de la lista" />
-      <Button layoutX="409.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" text="Salir" />
+      <Button layoutX="90.0" layoutY="102.0" mnemonicParsing="false" onMouseClicked="#onAgregarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Agregar alumnos a la lista" />
+      <Button layoutX="90.0" layoutY="194.0" mnemonicParsing="false" onMouseClicked="#onBuscarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Buscar alumno en la lista" />
+      <Button layoutX="90.0" layoutY="148.0" mnemonicParsing="false" onMouseClicked="#onEliminarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Eliminar alumnos de la lista" />
+      <Button layoutX="90.0" layoutY="240.0" mnemonicParsing="false" onMouseClicked="#onModificarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Modificar calificacion" />
+      <Button layoutX="90.0" layoutY="283.0" mnemonicParsing="false" onMouseClicked="#onMostrarAlumnosClick" prefHeight="26.0" prefWidth="254.0" style="-fx-border-color: gray; -fx-background-color: white;" text="Mostrar alumnos de la lista" />
+      <Button layoutX="373.0" layoutY="337.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" style="-fx-background-color: white; -fx-border-color: gray;" text="Salir" />
+      <BorderPane prefHeight="62.0" prefWidth="434.0" style="-fx-border-color: gray;" />
    </children>
 </AnchorPane>

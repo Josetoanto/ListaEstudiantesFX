@@ -4,15 +4,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="283.0" prefWidth="468.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josetoanto.estructuralistasfx.controllers.AgregarSesionController">
+<AnchorPane prefHeight="283.0" prefWidth="468.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.josetoanto.estructuralistasfx.controllers.AgregarSesionController">
    <children>
-      <TextField fx:id="nombreSesion" layoutX="226.0" layoutY="83.0" />
-      <TextField fx:id="contraseñaSesion" layoutX="227.0" layoutY="135.0" />
-      <Label layoutX="132.0" layoutY="87.0" text="Nombre" />
-      <Label layoutX="124.0" layoutY="139.0" text="Contraseña" />
-      <Button layoutX="208.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onAgregarClick" text="Agregar" />
-      <Label layoutX="177.0" layoutY="33.0" text="Agregar sesion nueva" />
+      <TextField fx:id="nombreSesion" layoutX="143.0" layoutY="87.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: GRAY;" />
+      <TextField fx:id="contraseñaSesion" layoutX="143.0" layoutY="139.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: GRAY;" />
+      <Label layoutX="68.0" layoutY="87.0" text="Nombre">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="48.0" layoutY="139.0" text="Contraseña">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button layoutX="208.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#onAgregarClick" style="-fx-background-color: #FFFFFF; -fx-border-color: GRAY; -fx-border-radius: 24;" text="Agregar" />
+      <Label layoutX="147.0" layoutY="26.0" text="Agregar sesion nueva">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
+      <BorderPane layoutY="262.0" prefHeight="26.0" prefWidth="480.0" style="-fx-background-color: black;" />
    </children>
 </AnchorPane>

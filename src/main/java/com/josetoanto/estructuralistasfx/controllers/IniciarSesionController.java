@@ -26,16 +26,19 @@ public class IniciarSesionController {
 
     private ListaAsistencia listaAsistencia;
 
+
     void setListaAsistencia (ListaAsistencia listaAsistencia){
         this.listaAsistencia=listaAsistencia;
     }
 
     @FXML
     void onIniciarClick(MouseEvent event) {
+        String nombre = "";
         boolean encontro=false;
         for (Usuario usuarioActual : listaAsistencia.getListaUsuarios()) {
             if (usuarioActual.getName().equals(nombreSesion.getText()) && usuarioActual.getPassword().equals(contraseñaSesion.getText())) {
                 encontro=true;
+                nombre = usuarioActual.getName();
             }
         }
         if (encontro){
@@ -49,6 +52,7 @@ public class IniciarSesionController {
                 stage.show();
                 MenuProfesorController menuProfesorController = fxmlLoader.getController();
                 menuProfesorController.setListaAsistencia(listaAsistencia);
+                menuProfesorController.agregarNombre(nombre);
             } catch (IOException e) {
                 e.printStackTrace();
             }

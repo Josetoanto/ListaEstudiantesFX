@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -19,7 +20,14 @@ public class MenuProfesorController {
     @FXML
     private AnchorPane txt_Bienvenido;
 
+    @FXML
+    private Label txt_bienvenida;
+
     ListaAsistencia listaAsistencia;
+
+    public void agregarNombre(String nombre){
+        txt_bienvenida.setText("Bienvenido " + nombre);
+    }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {
         this.listaAsistencia = listaAsistencia;

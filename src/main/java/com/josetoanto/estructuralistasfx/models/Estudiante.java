@@ -19,6 +19,14 @@ public class Estudiante {
         this.materias = materias;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
     public int getAgeIngreso() {
         return ageIngreso;
     }

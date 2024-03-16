@@ -31,15 +31,11 @@ public class EliminarAlumnoController {
     @FXML
     void onEliminarClick(MouseEvent event) {
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
-            System.out.println("Ingrese matricula de alumno a eliminar");
             matriculaEliminar = txt_MatriculaEliminar.getText();
             if (matriculaEliminar.length() == 6) {
-                System.out.println("tiene 6 digitos");
                 if (!(clonListaEstudiantes.get(matriculaEliminar) == null)){
-                    System.out.println("no es null");
                     if (listaAsistencia.getListaEstudiantes().remove(clonListaEstudiantes.get(matriculaEliminar)))
                         lbl_Advertencia.setText("Estudiante borrado con exito");
-                    System.out.println("borrado con exito");
                 } else {
                     Node source = (Node) event.getSource();
                     Stage stage = (Stage) source.getScene().getWindow();

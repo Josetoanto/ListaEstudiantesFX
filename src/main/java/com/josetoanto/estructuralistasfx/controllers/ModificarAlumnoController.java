@@ -45,27 +45,18 @@ public class ModificarAlumnoController {
             if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
-                    if (Integer.parseInt(txt_CalCal.getText()) >= 10 && Integer.parseInt(txt_CalCal.getText()) <= 100){
+                    if (Integer.parseInt(txt_CalCal.getText()) >= 10 && Integer.parseInt(txt_CalCal.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalED.getText()) >= 10 && Integer.parseInt(txt_CalED.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalIngles.getText()) >= 10 && Integer.parseInt(txt_CalIngles.getText()) <= 100 &&
+                            Integer.parseInt(txt_CalPOO.getText()) >= 10 && Integer.parseInt(txt_CalPOO.getText()) <= 100) {
+                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
+                        System.out.println("Agrege la calificacion de POO");
+                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
+                        System.out.println("Agrege la calificacion de Estructura de datos");
+                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
+                        System.out.println("Agrege la calificacion de Cálculo diferencial");
                         clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
                         lbl_Advertencia.setText("Estudiante modificado");
-                    } else {
-                        lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
-                    }
-                    if (Integer.parseInt(txt_CalED.getText()) >= 10 && Integer.parseInt(txt_CalED.getText()) <= 100){
-                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Estructura de datos",Double.valueOf(txt_CalED.getText()));
-                        lbl_Advertencia.setText("Estudiante modificado");
-                    } else {
-                        lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
-                    }
-                    if (Integer.parseInt(txt_CalIngles.getText()) >= 10 && Integer.parseInt(txt_CalIngles.getText()) <= 100){
-                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Inglés", Double.valueOf(txt_CalIngles.getText()));
-                        lbl_Advertencia.setText("Estudiante modificado");
-                    }else {
-                        lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
-                    }
-                    if (Integer.parseInt(txt_CalPOO.getText()) >= 10 && Integer.parseInt(txt_CalPOO.getText()) <= 100) {
-                    clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("POO",Double.valueOf(txt_CalPOO.getText()));
-                    lbl_Advertencia.setText("Estudiante modificado");
                     }else {
                         lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
                     }
@@ -99,6 +90,8 @@ public class ModificarAlumnoController {
                 if (clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null) {
                     lbl_Advertencia.setText("Estudiante no encontrado");
                 }
+                else{lbl_Advertencia.setText(clonListaEstudiantes.get(txt_MatriculaModificar.getText()).getName()+" "+
+                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).getLastname());}
             } else {
                 lbl_Advertencia.setText("6 caracteres minimo");
                 }

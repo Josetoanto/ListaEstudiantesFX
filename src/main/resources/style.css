@@ -1,0 +1,23 @@
+.alert {
+    -fx-background-color: #FFFFFF;
+    -fx-fill: #FFFFFF;
+    -fx-text-fill: #FFFFFF
+}
+.button{
+    -fx-background-color:  #FFFFFF;
+    -fx-border-color: #FFFFFF;
+    -fx-border-radius: 24px;
+}
+.dialog-pane .label {
+    -fx-font-family: "Times New Roman", "Times New Roman";
+    -fx-font-size: 16px;
+}
+.dialog-pane  {
+    -fx-background-color:  #6d84b4;
+}
+.dialog-pane .header-panel{
+    -fx-background-color:  #FFFFFF;
+}
+.dialog-pane {
+    -fx-background-color:  #6d84b4;
+}

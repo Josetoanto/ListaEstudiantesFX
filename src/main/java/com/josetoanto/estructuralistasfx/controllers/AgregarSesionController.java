@@ -40,7 +40,18 @@ public class AgregarSesionController {
 
             ButtonType buttonTypeSi = new ButtonType("Sí");
             ButtonType buttonTypeNo = new ButtonType("No");
-            alert.getButtonTypes().setAll(buttonTypeSi, buttonTypeNo);
+            
+
+            try {
+                String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                alert.getDialogPane().getStylesheets().add(cssFile);
+            } catch (NullPointerException e) {
+                System.err.println("No se pudo encontrar el archivo CSS.");
+                e.printStackTrace();
+            }
+
+
+
 
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeSi) {

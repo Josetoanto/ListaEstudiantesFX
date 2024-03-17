@@ -23,6 +23,13 @@ public class MostrarAlumnosController {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+    @FXML
+    void onActualizarClick(MouseEvent event) {
+        listaAlumnos.getItems().clear();
+        for (Estudiante estudiante: listaEstudiantes){
+            listaAlumnos.getItems().add(estudiante.imprimirDatos());
+        }
+    }
 
     public void setListaAsistencia(ListaAsistencia listaAsistencia) {
         this.listaEstudiantes = listaAsistencia.getListaEstudiantes();

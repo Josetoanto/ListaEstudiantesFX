@@ -48,6 +48,13 @@ public class AgregarAlumnoController {
                 alert.setHeaderText(null);
                 alert.setContentText("Matricula ya existe, por lo tanto no se agregara el alumno.");
                 alert.showAndWait();
+                try {
+                    String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                    alert.getDialogPane().getStylesheets().add(cssFile);
+                } catch (NullPointerException e) {
+                    System.err.println("No se pudo encontrar el archivo CSS.");
+                    e.printStackTrace();
+                }
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
                 stage.close();
@@ -57,6 +64,13 @@ public class AgregarAlumnoController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Matricula no tiene 6 digitos");
+                try {
+                    String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                    alert.getDialogPane().getStylesheets().add(cssFile);
+                } catch (NullPointerException e) {
+                    System.err.println("No se pudo encontrar el archivo CSS.");
+                    e.printStackTrace();
+                }
                 alert.showAndWait();
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
@@ -73,6 +87,13 @@ public class AgregarAlumnoController {
         alert.setTitle("Agregado Exitosamente");
         alert.setHeaderText(null);
         alert.setContentText("Se agrego correctamente el alumno\n su matricula es: "+ matricula);
+        try {
+            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+            alert.getDialogPane().getStylesheets().add(cssFile);
+        } catch (NullPointerException e) {
+            System.err.println("No se pudo encontrar el archivo CSS.");
+            e.printStackTrace();
+        }
         alert.showAndWait();
         setListaAsistencia(listaAsistencia);
     }

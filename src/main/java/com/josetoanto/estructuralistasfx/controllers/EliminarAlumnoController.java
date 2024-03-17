@@ -65,11 +65,14 @@ public class EliminarAlumnoController {
             if (matriculaEliminar.length() == 6) {
                 if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
                     lbl_Advertencia.setText("Estudiante no encontrado");
+                    txt_MostrarEstudiante.setText("");
                 } else {
+                    lbl_Advertencia.setText("Estudiante a eliminar:");
                     txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
                 }
             } else {
                 lbl_Advertencia.setText("6 caracteres minimo");
+                txt_MostrarEstudiante.setText("");
             }
         } else {
             lbl_Advertencia.setText("No hay estudiantes");

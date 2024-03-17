@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 
 import java.util.HashMap;
 
@@ -91,7 +93,9 @@ public class ModificarAlumnoController {
                     lbl_Advertencia.setText("Estudiante no encontrado");
                 }
                 else{lbl_Advertencia.setText(clonListaEstudiantes.get(txt_MatriculaModificar.getText()).getName()+" "+
-                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).getLastname());}
+                        clonListaEstudiantes.get(txt_MatriculaModificar.getText()).getLastname());
+                    lbl_Advertencia.setTextFill(Color.GREEN);}
+
             } else {
                 lbl_Advertencia.setText("6 caracteres minimo");
                 }

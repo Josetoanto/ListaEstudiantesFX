@@ -21,7 +21,10 @@
       </BorderPane>
       <TextField fx:id="txt_MatriculaModificar" layoutX="161.0" layoutY="98.0" onKeyReleased="#txta_BuscadorAlumnos" prefHeight="26.0" prefWidth="159.0" />
       <Label layoutX="25.0" layoutY="102.0" text="Matricula del estudiante:" />
-      <Label fx:id="lbl_Advertencia" layoutX="25.0" layoutY="128.0" prefHeight="26.0" prefWidth="287.0" />
+      <Label fx:id="lbl_Advertencia" layoutX="25.0" layoutY="128.0" prefHeight="26.0" prefWidth="287.0" textFill="#c72020">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Button layoutX="272.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" style="-fx-background-color: #6d84b4; -fx-background-radius: 2;" text="Salir" textFill="WHITE" />
       <Button layoutX="159.0" layoutY="334.0" mnemonicParsing="false" onAction="#onModificarClick" style="-fx-background-color: #6d84b4; -fx-background-radius: 2;" text="Modificar" textFill="WHITE" />
       <Label layoutX="26.0" layoutY="162.0" text="Agrege calificacion de Ingles" />

@@ -9,6 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
@@ -51,6 +52,7 @@ public class BuscarAlumnoController {
                         stage.close();
                     }
                 } else {
+                    lbl_Advertencia.setTextFill(Color.GREEN);
                     lbl_Advertencia.setText("Estudiante encontrado");
                     txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
                     intentos = 0;

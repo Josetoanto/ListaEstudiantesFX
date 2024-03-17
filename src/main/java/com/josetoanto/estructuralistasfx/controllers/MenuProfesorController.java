@@ -108,6 +108,13 @@ public class MenuProfesorController {
             alert.setTitle("Error");
             alert.setHeaderText(null);
             alert.setContentText("Lista vacia");
+            try {
+                String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                alert.getDialogPane().getStylesheets().add(cssFile);
+            } catch (NullPointerException e) {
+                System.err.println("No se pudo encontrar el archivo CSS.");
+                e.printStackTrace();
+            }
             alert.showAndWait();
         } else {
             try {

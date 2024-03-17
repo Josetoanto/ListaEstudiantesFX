@@ -40,11 +40,12 @@ public class AgregarSesionController {
 
             ButtonType buttonTypeSi = new ButtonType("Sí");
             ButtonType buttonTypeNo = new ButtonType("No");
-            
+
 
             try {
                 String cssFile = getClass().getResource("/Style.css").toExternalForm();
                 alert.getDialogPane().getStylesheets().add(cssFile);
+                alert.getButtonTypes().setAll(buttonTypeSi,buttonTypeNo);
             } catch (NullPointerException e) {
                 System.err.println("No se pudo encontrar el archivo CSS.");
                 e.printStackTrace();
@@ -61,6 +62,13 @@ public class AgregarSesionController {
                     alert1.setTitle("Éxito");
                     alert1.setHeaderText(null);
                     alert1.setContentText("Usuario agregado correctamente");
+                    try {
+                        String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                        alert1.getDialogPane().getStylesheets().add(cssFile);
+                    } catch (NullPointerException e) {
+                        System.err.println("No se pudo encontrar el archivo CSS.");
+                        e.printStackTrace();
+                    }
                     alert1.showAndWait();
                     System.out.println("Usuario agregado correctamente");
                     setListaAsistencia(listaAsistencia);
@@ -73,6 +81,13 @@ public class AgregarSesionController {
                     alert1.setTitle("Cancelado");
                     alert1.setHeaderText(null);
                     alert1.setContentText("Usuario no se creó");
+                    try {
+                        String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                        alert1.getDialogPane().getStylesheets().add(cssFile);
+                    } catch (NullPointerException e) {
+                        System.err.println("No se pudo encontrar el archivo CSS.");
+                        e.printStackTrace();
+                    }
                     alert1.showAndWait();
                     System.out.println("Usuario no se creó");
                 }
@@ -83,6 +98,13 @@ public class AgregarSesionController {
             alert1.setTitle("Cancelado");
             alert1.setHeaderText(null);
             alert1.setContentText("Contraseña no cumple con los criterios");
+            try {
+                String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                alert1.getDialogPane().getStylesheets().add(cssFile);
+            } catch (NullPointerException e) {
+                System.err.println("No se pudo encontrar el archivo CSS.");
+                e.printStackTrace();
+            }
             alert1.showAndWait();
             System.out.println("Contraseña no cumple con los criterios");
             }

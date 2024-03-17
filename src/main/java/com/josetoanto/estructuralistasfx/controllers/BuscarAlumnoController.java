@@ -26,6 +26,8 @@ public class BuscarAlumnoController {
     private ListaAsistencia listaAsistencia;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
 
+    private int intentos = 0;
+
 
     @FXML
     void onSalirClick(MouseEvent event) {
@@ -41,11 +43,21 @@ public class BuscarAlumnoController {
             if (matriculaEliminar.length() == 6) {
                 if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
                     lbl_Advertencia.setText("Estudiante no encontrado");
+                    txt_MostrarEstudiante.setText("");
+                    intentos++;
+                    if (intentos==3){
+                        Node source = (Node) event.getSource();
+                        Stage stage = (Stage) source.getScene().getWindow();
+                        stage.close();
+                    }
                 } else {
+                    lbl_Advertencia.setText("Estudiante encontrado");
                     txt_MostrarEstudiante.setText(clonListaEstudiantes.get(txt_MatriculaEliminar.getText()).imprimirDatos());
+                    intentos = 0;
                 }
             } else {
                 lbl_Advertencia.setText("6 caracteres minimo");
+                txt_MostrarEstudiante.setText("");
             }
         } else {
             lbl_Advertencia.setText("No hay estudiantes");

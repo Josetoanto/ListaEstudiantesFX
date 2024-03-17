@@ -67,6 +67,13 @@ public class IniciarSesionController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Se ha excedido el número máximo de intentos. La aplicación se cerrará.");
+                try {
+                    String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                    alert.getDialogPane().getStylesheets().add(cssFile);
+                } catch (NullPointerException e) {
+                    System.err.println("No se pudo encontrar el archivo CSS.");
+                    e.printStackTrace();
+                }
                 alert.showAndWait();
                 System.exit(1);
             } else {
@@ -74,6 +81,13 @@ public class IniciarSesionController {
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
                 alert.setContentText("Usuario o contraseña incorrectos. Intento " + intentos + " de 3.");
+                try {
+                    String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                    alert.getDialogPane().getStylesheets().add(cssFile);
+                } catch (NullPointerException e) {
+                    System.err.println("No se pudo encontrar el archivo CSS.");
+                    e.printStackTrace();
+                }
                 alert.showAndWait();
             }
         }

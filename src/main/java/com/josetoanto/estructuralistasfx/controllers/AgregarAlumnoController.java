@@ -3,7 +3,7 @@ package com.josetoanto.estructuralistasfx.controllers;
 import com.josetoanto.estructuralistasfx.models.Estudiante;
 
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
-import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.fxml.FXML;
 
 import javafx.scene.Node;
@@ -24,7 +24,7 @@ public class AgregarAlumnoController {
     @FXML
     private TextField txt_name;
 
-    private ListaAsistencia listaAsistencia;
+    private Usuario usuario;
 
     @FXML
     void onAgregarClick(MouseEvent event) {
@@ -34,15 +34,15 @@ public class AgregarAlumnoController {
         String matricula=estudiante.generarNumeroMatricula(age);
             estudiante=new Estudiante(Integer.parseInt(txt_fechaIngreso.getText()),matricula,txt_name.getText(),txt_lastName.getText(),estudiante.getMaterias());
 
-            if (!listaAsistencia.getListaEstudiantes().contains(estudiante)&&matricula.length()==6){
+            if (!usuario.getListaEstudiantes().contains(estudiante)&&matricula.length()==6){
                 estudiante=new Estudiante(Integer.parseInt(txt_fechaIngreso.getText()),matricula,txt_name.getText(),txt_lastName.getText(),estudiante.getMaterias());
-                listaAsistencia.addEstudiante(estudiante);
+                usuario.addEstudiante(estudiante);
                 alertaAgregadoCorrectamente(matricula);
                 Node source = (Node) event.getSource();
                 Stage stage = (Stage) source.getScene().getWindow();
                 stage.close();
             }
-            else if (listaAsistencia.getListaEstudiantes().contains(estudiante)){
+            else if (usuario.getListaEstudiantes().contains(estudiante)){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
@@ -78,8 +78,8 @@ public class AgregarAlumnoController {
             }
     }
 
-    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaAsistencia = listaAsistencia;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public void alertaAgregadoCorrectamente(String matricula){
@@ -95,6 +95,6 @@ public class AgregarAlumnoController {
             e.printStackTrace();
         }
         alert.showAndWait();
-        setListaAsistencia(listaAsistencia);
+        setUsuario(usuario);
     }
 }

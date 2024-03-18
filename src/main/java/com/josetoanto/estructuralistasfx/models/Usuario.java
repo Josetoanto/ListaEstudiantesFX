@@ -1,10 +1,13 @@
 package com.josetoanto.estructuralistasfx.models;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Usuario {
-    String name;
-    String password;
+    private String name;
+    private String password;
+    private ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+
 
     public Usuario(String name, String password) {
         this.name = name;
@@ -29,6 +32,17 @@ public class Usuario {
         if (o == null || getClass() != o.getClass()) return false;
         Usuario login = (Usuario) o;
         return Objects.equals(name, login.name);
+    }
+
+    public ArrayList<Estudiante> getListaEstudiantes() {
+        return listaEstudiantes;
+    }
+    public void addEstudiante(Estudiante alumno) {
+        listaEstudiantes.add(alumno);
+    }
+
+    public void setListaEstudiantes(ArrayList<Estudiante> listaEstudiantes) {
+        this.listaEstudiantes = listaEstudiantes;
     }
 
     @Override

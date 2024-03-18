@@ -35,11 +35,15 @@ public class IniciarSesionController {
     void onIniciarClick(MouseEvent event) {
         String nombre = "";
         boolean encontro=false;
+        int iterador = 0;
+        int iteradorAux = 0;
         for (Usuario usuarioActual : listaAsistencia.getListaUsuarios()) {
             if (usuarioActual.getName().equals(nombreSesion.getText()) && usuarioActual.getPassword().equals(contraseñaSesion.getText())) {
                 encontro=true;
                 nombre = usuarioActual.getName();
+                iteradorAux = iterador;
             }
+            iterador++;
         }
         if (encontro){
             try {
@@ -51,7 +55,7 @@ public class IniciarSesionController {
                 stage.setScene(scene);
                 stage.show();
                 MenuProfesorController menuProfesorController = fxmlLoader.getController();
-                menuProfesorController.setListaAsistencia(listaAsistencia);
+                menuProfesorController.setListaAsistencia(listaAsistencia.getListaUsuarios().get(iteradorAux));
                 menuProfesorController.agregarNombre(nombre);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -2,6 +2,7 @@ package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.models.Estudiante;
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -11,7 +12,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
 
 import java.util.HashMap;
 
@@ -34,7 +34,7 @@ public class ModificarAlumnoController {
 
     @FXML
     private TextField txt_MatriculaModificar;
-    private ListaAsistencia listaAsistencia;
+    private Usuario usuario;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
 
     private String matricula;
@@ -43,7 +43,7 @@ public class ModificarAlumnoController {
     @FXML
     void onModificarClick(ActionEvent event) {
         boolean noRango=false;
-        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+        if (!usuario.getListaEstudiantes().isEmpty()) {
             if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
@@ -87,7 +87,7 @@ public class ModificarAlumnoController {
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
        matricula = txt_MatriculaModificar.getText();
-        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+        if (!usuario.getListaEstudiantes().isEmpty()) {
             if (matricula.length() == 6) {
                 if (clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null) {
                     lbl_Advertencia.setText("Estudiante no encontrado");
@@ -104,9 +104,9 @@ public class ModificarAlumnoController {
         }
     }
 
-    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaAsistencia = listaAsistencia;
-        for (Estudiante iterador : listaAsistencia.getListaEstudiantes()) {
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        for (Estudiante iterador : usuario.getListaEstudiantes()) {
             clonListaEstudiantes.put(iterador.getMatricula(), iterador);
         }
     }

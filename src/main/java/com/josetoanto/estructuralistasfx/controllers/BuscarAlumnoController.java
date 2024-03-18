@@ -2,6 +2,7 @@ package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.models.Estudiante;
 import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -24,7 +25,7 @@ public class BuscarAlumnoController {
 
     @FXML
     private TextArea txt_MostrarEstudiante;
-    private ListaAsistencia listaAsistencia;
+    private Usuario usuario;
     private HashMap<String, Estudiante> clonListaEstudiantes = new HashMap<>();
 
     private int intentos = 0;
@@ -40,7 +41,7 @@ public class BuscarAlumnoController {
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
         String matriculaEliminar = txt_MatriculaEliminar.getText();
-        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
+        if (!usuario.getListaEstudiantes().isEmpty()) {
             if (matriculaEliminar.length() == 6) {
                 if (clonListaEstudiantes.get(txt_MatriculaEliminar.getText()) == null) {
                     lbl_Advertencia.setText("Estudiante no encontrado");
@@ -66,9 +67,9 @@ public class BuscarAlumnoController {
         }
     }
 
-    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaAsistencia = listaAsistencia;
-        for (Estudiante iterador : listaAsistencia.getListaEstudiantes()) {
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+        for (Estudiante iterador : usuario.getListaEstudiantes()) {
             clonListaEstudiantes.put(iterador.getMatricula(), iterador);
         }
     }

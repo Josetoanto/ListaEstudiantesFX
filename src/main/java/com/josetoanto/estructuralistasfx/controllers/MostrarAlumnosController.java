@@ -1,7 +1,7 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.models.Estudiante;
-import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
@@ -31,8 +31,8 @@ public class MostrarAlumnosController {
         }
     }
 
-    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaEstudiantes = listaAsistencia.getListaEstudiantes();
+    public void setListaAsistencia(Usuario usuario) {
+        this.listaEstudiantes = usuario.getListaEstudiantes();
         for (Estudiante estudiante: listaEstudiantes){
             listaAlumnos.getItems().add(estudiante.imprimirDatos());
         }

@@ -1,7 +1,7 @@
 package com.josetoanto.estructuralistasfx.controllers;
 
 import com.josetoanto.estructuralistasfx.Main;
-import com.josetoanto.estructuralistasfx.models.ListaAsistencia;
+import com.josetoanto.estructuralistasfx.models.Usuario;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -23,14 +23,14 @@ public class MenuProfesorController {
     @FXML
     private Label txt_bienvenida;
 
-    ListaAsistencia listaAsistencia;
+    private Usuario usuario;
 
     public void agregarNombre(String nombre){
         txt_bienvenida.setText("Bienvenido " + nombre);
     }
 
-    public void setListaAsistencia(ListaAsistencia listaAsistencia) {
-        this.listaAsistencia = listaAsistencia;
+    public void setListaAsistencia(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @FXML
@@ -44,7 +44,7 @@ public class MenuProfesorController {
             stage.setScene(scene);
             stage.show();
             AgregarAlumnoController agregarAlumnoController = fxmlLoader.getController();
-            agregarAlumnoController.setListaAsistencia(listaAsistencia);
+            agregarAlumnoController.setUsuario(usuario);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -61,7 +61,7 @@ public class MenuProfesorController {
             stage.setScene(scene);
             stage.show();
             BuscarAlumnoController buscarAlumnoController = fxmlLoader.getController();
-            buscarAlumnoController.setListaAsistencia(listaAsistencia);
+            buscarAlumnoController.setUsuario(usuario);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -78,7 +78,7 @@ public class MenuProfesorController {
             stage.setScene(scene);
             stage.show();
             EliminarAlumnoController eliminarAlumnoController = fxmlLoader.getController();
-            eliminarAlumnoController.setListaAsistencia(listaAsistencia);
+            eliminarAlumnoController.setUsuario(usuario);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -95,7 +95,7 @@ public class MenuProfesorController {
             stage.setScene(scene);
             stage.show();
             ModificarAlumnoController modificarAlumnoController = fxmlLoader.getController();
-            modificarAlumnoController.setListaAsistencia(listaAsistencia);
+            modificarAlumnoController.setUsuario(usuario);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -103,7 +103,7 @@ public class MenuProfesorController {
 
     @FXML
     void onMostrarAlumnosClick(MouseEvent event) {
-        if (listaAsistencia.getListaEstudiantes().isEmpty()){
+        if (usuario.getListaEstudiantes().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText(null);
@@ -126,7 +126,7 @@ public class MenuProfesorController {
                 stage.setScene(scene);
                 stage.show();
                 MostrarAlumnosController mostrarAlumnosController = fxmlLoader.getController();
-                mostrarAlumnosController.setListaAsistencia(listaAsistencia);
+                mostrarAlumnosController.setListaAsistencia(usuario);
             } catch (IOException e) {
                 e.printStackTrace();
             }

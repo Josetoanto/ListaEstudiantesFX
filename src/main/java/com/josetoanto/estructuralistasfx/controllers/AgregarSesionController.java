@@ -8,6 +8,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
@@ -45,18 +46,17 @@ public class AgregarSesionController {
             try {
                 String cssFile = getClass().getResource("/Style.css").toExternalForm();
                 alert.getDialogPane().getStylesheets().add(cssFile);
-                alert.getButtonTypes().setAll(buttonTypeSi,buttonTypeNo);
+                alert.getButtonTypes().setAll(buttonTypeSi, buttonTypeNo);
             } catch (NullPointerException e) {
                 System.err.println("No se pudo encontrar el archivo CSS.");
                 e.printStackTrace();
             }
 
 
-
-
             alert.showAndWait().ifPresent(response -> {
                 if (response == buttonTypeSi) {
                     Usuario u1 = new Usuario(nombreSesion.getText(), contraseñaSesion.getText());
+                    if(!listaAsistencia.getListaUsuarios().contains(u1)){
                     listaAsistencia.addUsuario(u1);
                     Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
                     alert1.setTitle("Éxito");
@@ -75,6 +75,21 @@ public class AgregarSesionController {
                     Node source = (Node) event.getSource();
                     Stage stage = (Stage) source.getScene().getWindow();
                     stage.close();
+                }else {
+                        System.out.println("usuario repetido");
+                        Alert alert1 = new Alert(Alert.AlertType.INFORMATION);
+                        alert1.setTitle("error");
+                        alert1.setHeaderText(null);
+                        alert1.setContentText("Nombre de usuario ya esta en uso\nfavor de cambiarlo");
+                        try {
+                            String cssFile = getClass().getResource("/Style.css").toExternalForm();
+                            alert1.getDialogPane().getStylesheets().add(cssFile);
+                        } catch (NullPointerException e) {
+                            System.err.println("No se pudo encontrar el archivo CSS.");
+                            e.printStackTrace();
+                        }
+                        alert1.showAndWait();
+                    }
 
                 } else if (response == buttonTypeNo) {
                     Alert alert1 = new Alert(Alert.AlertType.INFORMATION);

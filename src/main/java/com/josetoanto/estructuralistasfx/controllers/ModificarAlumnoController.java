@@ -43,12 +43,8 @@ public class ModificarAlumnoController {
     @FXML
     void onModificarClick(ActionEvent event) {
         boolean noRango=false;
-<<<<<<< HEAD
         lbl_Advertencia.setTextFill(Color.GREEN);
-        if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
-=======
         if (!usuario.getListaEstudiantes().isEmpty()) {
->>>>>>> UsuariosArreglados
             if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
                     clonListaEstudiantes.get(txt_MatriculaModificar.getText()).inicializarMaterias();
@@ -118,3 +114,4 @@ public class ModificarAlumnoController {
         }
     }
 }
+

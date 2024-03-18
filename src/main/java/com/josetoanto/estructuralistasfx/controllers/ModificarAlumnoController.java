@@ -43,6 +43,7 @@ public class ModificarAlumnoController {
     @FXML
     void onModificarClick(ActionEvent event) {
         boolean noRango=false;
+        lbl_Advertencia.setTextFill(Color.GREEN);
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
             if (matricula.length() == 6) {
                 if (!(clonListaEstudiantes.get(txt_MatriculaModificar.getText()) == null)) {
@@ -60,6 +61,7 @@ public class ModificarAlumnoController {
                         clonListaEstudiantes.get(txt_MatriculaModificar.getText()).setMaterias("Cálculo diferencial",Double.valueOf(txt_CalCal.getText()));
                         lbl_Advertencia.setText("Estudiante modificado");
                     }else {
+                        lbl_Advertencia.setTextFill(Color.RED);
                         lbl_Advertencia.setText("Las calificaciones deben estar entre 10 y 100");
                     }
                 } else {
@@ -86,6 +88,7 @@ public class ModificarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
+        lbl_Advertencia.setTextFill(Color.RED);
        matricula = txt_MatriculaModificar.getText();
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
             if (matricula.length() == 6) {

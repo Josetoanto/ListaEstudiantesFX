@@ -39,6 +39,7 @@ public class BuscarAlumnoController {
 
     @FXML
     void txta_BuscadorAlumnos(KeyEvent event) {
+        lbl_Advertencia.setTextFill(Color.RED);
         String matriculaEliminar = txt_MatriculaEliminar.getText();
         if (!listaAsistencia.getListaEstudiantes().isEmpty()) {
             if (matriculaEliminar.length() == 6) {

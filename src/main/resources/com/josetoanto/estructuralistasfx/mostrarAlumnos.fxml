@@ -22,6 +22,6 @@
       </BorderPane>
       <ListView fx:id="listaAlumnos" layoutX="13.0" layoutY="75.0" prefHeight="266.0" prefWidth="574.0" />
       <Button layoutX="547.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#onSalirClick" style="-fx-background-color: #6d84b4; -fx-background-radius: 2;" text="Salir" textFill="WHITE" />
-      <Button layoutX="427.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#onActualizarClick" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #6d84b4; -fx-border-radius: 2;" text="actualizar" textFill="WHITE" />
+      <Button layoutX="427.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#onActualizarClick" prefHeight="26.0" prefWidth="88.0" style="-fx-background-color: #6d84b4; -fx-border-radius: 2;" text="Actualizar" textFill="WHITE" />
    </children>
 </AnchorPane>
